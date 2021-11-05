@@ -1,0 +1,10 @@
+F:\project\csproj\RemNum\RemNum\RemNum\bin\Debug\RemNum.exe.config
+F:\project\csproj\RemNum\RemNum\RemNum\bin\Debug\RemNum.exe
+F:\project\csproj\RemNum\RemNum\RemNum\bin\Debug\RemNum.pdb
+F:\project\csproj\RemNum\RemNum\RemNum\obj\Debug\RemNum.csprojAssemblyReference.cache
+F:\project\csproj\RemNum\RemNum\RemNum\obj\Debug\RemNum.Form1.resources
+F:\project\csproj\RemNum\RemNum\RemNum\obj\Debug\RemNum.Properties.Resources.resources
+F:\project\csproj\RemNum\RemNum\RemNum\obj\Debug\RemNum.csproj.GenerateResource.cache
+F:\project\csproj\RemNum\RemNum\RemNum\obj\Debug\RemNum.csproj.CoreCompileInputs.cache
+F:\project\csproj\RemNum\RemNum\RemNum\obj\Debug\RemNum.exe
+F:\project\csproj\RemNum\RemNum\RemNum\obj\Debug\RemNum.pdb
