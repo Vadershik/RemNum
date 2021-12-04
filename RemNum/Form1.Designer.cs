@@ -67,11 +67,12 @@ namespace RemNum
             // 
             // CheckBut
             // 
-            this.CheckBut.Location = new System.Drawing.Point(138, 129);
+            this.CheckBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.CheckBut.Location = new System.Drawing.Point(136, 120);
             this.CheckBut.Name = "CheckBut";
-            this.CheckBut.Size = new System.Drawing.Size(75, 23);
+            this.CheckBut.Size = new System.Drawing.Size(75, 31);
             this.CheckBut.TabIndex = 3;
-            this.CheckBut.Text = "Check";
+            this.CheckBut.Text = "Start";
             this.CheckBut.UseVisualStyleBackColor = true;
             this.CheckBut.Click += new System.EventHandler(this.CheckBut_Click);
             // 
