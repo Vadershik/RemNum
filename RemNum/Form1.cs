@@ -15,6 +15,7 @@ namespace RemNum
     {
         public int timeLeft = 5;
         int rec = 1;
+        int rectext = 1;
         int start = 1, end = 9;
         Random gennum = new Random();
         int num = 0;
@@ -22,6 +23,8 @@ namespace RemNum
         {
             InitializeComponent();
             timer1.Interval = 1000;
+            PrintNum.Visible = false;
+            NumText.Visible = false;
         }
 
         private void CheckBut_Click(object sender, EventArgs e)
@@ -30,36 +33,61 @@ namespace RemNum
             num = gennum.Next(start*rec,end*rec);
             timeLeft = 5;
             timer1.Start();
-            NumText.Text = Convert.ToString(num);
-            PrintNum.Visible = false;
-            timeLeft = 5;
-            timer1.Start();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
             PrintNum.Visible = true;
-            Thread.Sleep(timeLeft * 1000);
             NumText.Text = "";
-            timeLeft = 5;
-            timer1.Start();
-            int pnum = PrintNum.Text=="" ? 0 : Convert.ToInt32(PrintNum.Text);
-            if (num == pnum)
+            if (timeLeft>0)
             {
-                NumText.Text = "True";
-                rec += 1;
+                timeLeft = timeLeft - 1;
             }
             else
             {
-                NumText.Text = "False";
-                rec = 1;
+                timer2.Stop();
+                NumText.Visible = true;
+                long pnum = PrintNum.Text == "" ? 0 : Convert.ToInt32(PrintNum.Text);
+                if (num == pnum)
+                {
+                    NumText.Text = "True";
+                    rec *= 10;
+                    rectext += 1;
+                    num = gennum.Next(start * rec, end * rec);
+                    recordText.Text = $"Рекорд: {rectext}";
+                    CheckBut.Visible = true;
+                    PrintNum.Text = "";
+                    PrintNum.Visible = false;
+                }
+                else
+                {
+                    NumText.Text = "False";
+                    PrintNum.Text = "";
+                    PrintNum.Visible = false;
+                    rec = 1;
+                    rectext = 1;
+                    num = gennum.Next(start * rec, end * rec);
+                    CheckBut.Visible = true;
+                }
             }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(timeLeft > 0)
+            NumText.Visible = true;
+            NumText.Text = Convert.ToString(num);
+            PrintNum.Visible = false;
+            CheckBut.Visible = false;
+            if (timeLeft > 0)
             {
                 timeLeft = timeLeft - 1;
             } else
             {
+                PrintNum.Visible = true;
+                NumText.Visible = false;
                 timer1.Stop();
+                timeLeft = 5;
+                timer2.Start();
             }
         }
     }
